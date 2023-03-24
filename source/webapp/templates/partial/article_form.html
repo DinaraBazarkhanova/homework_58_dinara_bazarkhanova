@@ -1,0 +1,21 @@
+{% csrf_token %}
+    <div class="form_row">
+        <label for="title">Заголовок</label>
+        <input type="text" id="title" name="title" placeholder="Заголовок" value="{{ article.title }}">
+    </div>
+    <div class="form_row">
+        <label for="author">Автор</label>
+        <input type="text" id="author" name="author" placeholder="Автор" value="{{ article.author }}">
+    </div>
+    <div class="form_row">
+        <label for="text">Текст</label>
+        <textarea name="text", id="text", cols="30", rows="10">{{ article.text }}</textarea>
+    </div>
+    <div class="submit_button">
+        <input type="submit" value="{{ button_text }}">
+    </div>
+    {% if message %}
+        <div class="error">
+            <p>{{ message }}</p>
+        </div>
+    {% endif %}

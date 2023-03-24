@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block menu %}
+    <a href="{% url 'article_add' %}">Добавить новую запись</a>
+{% endblock %}
+{% block content %}
+    <h1>Гостевая Книга</h1>
+    {% for article in articles %}
+        <div class="block">
+            <h2>
+                {{ article.title }} ({{ article.author }})
+                <a class="icons" href="{% url 'article_update' article.pk %}">
+                    Update <i class="fa-regular fa-pen-to-square"></i>
+                </a>
+                <a class="icons" href="{% url 'article_delete' article.pk %}">
+                    Delete <i class="fa-regular fa-trash"></i>
+                </a>
+            </h2>
+            <p>{{ article.text }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

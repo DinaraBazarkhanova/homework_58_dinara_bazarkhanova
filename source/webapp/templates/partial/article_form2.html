@@ -1,0 +1,7 @@
+{% load django_bootstrap5 %}
+{% csrf_token %}
+{% bootstrap_form form %}
+<div class="form-row">
+    {% bootstrap_button button_type="submit" content=button_text %}
+{#    <input type="submit" class="btn btn-danger" value="{{ button_text }}">#}
+</div>

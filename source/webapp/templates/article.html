@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Article{% endblock %}
+{% block menu %}
+    <a href="{% url 'article_add' %}">Добавить</a>
+    <a href="{% url 'article_update' article.pk %}">Изменить</a>
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <h1>TO DO</h1>
+        <p><a href="{% url 'index' %}">Главная</a></p>
+        <p>Заголовок: {{ article.title }}</p>
+        <p>Автор: {{ article.author }}</p>
+        <p>Текст: {{ article.text }}</p>
+        <p>Статус: {{ article.status }}</p>
+    </div>
+{% endblock %}

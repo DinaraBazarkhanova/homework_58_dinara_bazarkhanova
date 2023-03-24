@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}New record{% endblock %}
+{% block content %}
+    <h1>Добавить новую запись</h1>
+    <div class="form">
+        <form action="{% url 'article_add' %}" method="post">
+            {% include 'partial/article_form2.html' with button_text='Добавить' %}
+        </form>
+    </div>
+{% endblock %}
